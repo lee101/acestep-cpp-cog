@@ -1,0 +1,13 @@
+{
+  "outputKind": "audio",
+  "inputs": [
+    {"name": "prompt", "type": "string", "control": "textarea", "required": true, "order": 0},
+    {"name": "lyrics", "type": "string", "control": "textarea", "default": "[Instrumental]", "order": 1},
+    {"name": "duration", "type": "integer", "default": 30, "min": 10, "max": 300, "unit": "sec", "control": "slider", "order": 2},
+    {"name": "bpm", "type": "integer", "default": 0, "min": 0, "max": 240, "unit": "BPM", "control": "slider", "order": 3},
+    {"name": "key", "type": "string", "default": "", "order": 4},
+    {"name": "seed", "type": "integer", "default": 17, "min": 0, "max": 2147483647, "advanced": true, "order": 5},
+    {"name": "steps", "type": "integer", "default": 8, "min": 1, "max": 50, "advanced": true, "order": 6},
+    {"name": "format", "type": "string", "control": "select", "options": ["mp3", "wav"], "default": "mp3", "order": 7}
+  ]
+}
