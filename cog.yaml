@@ -12,5 +12,5 @@ build:
   python_requirements: "requirements.txt"
   run:
     - "git clone --recurse-submodules https://github.com/ace-step/acestep.cpp.git /opt/acestep.cpp && git -C /opt/acestep.cpp checkout ed53caf164e4492a5620b2e3f2264629cf66da24 && git -C /opt/acestep.cpp submodule update --init --recursive"
-    - "cmake -S /opt/acestep.cpp -B /opt/acestep.cpp/build -DGGML_CUDA=ON -DCMAKE_BUILD_TYPE=Release && cmake --build /opt/acestep.cpp/build --config Release -j2"
+    - "cmake -S /opt/acestep.cpp -B /opt/acestep.cpp/build -DGGML_CUDA=ON -DGGML_NATIVE=OFF -DCMAKE_CUDA_ARCHITECTURES=80 -DCMAKE_BUILD_TYPE=Release && cmake --build /opt/acestep.cpp/build --config Release -j2"
 run: "predict.py:Predictor"
